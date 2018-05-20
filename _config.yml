@@ -1,1 +1,105 @@
-theme: jekyll-theme-leap-day
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width,user-scalable=no, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none ;
+            position: absolute;
+            width: 1500px;
+            height: 200px;
+        }
+        img{
+            /*解决底边三像素*/
+            vertical-align: top;
+        }
+        li{
+            float: left;
+        }
+        .imgs{
+            width: 720px;
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto ;
+        }
+
+    </style>
+</head>
+<body>
+<div class="jd_banner">
+    <ul id="jd_banner_img">
+        <li><img src="images/l1.jpg" alt=""></li>
+        <li><img src="images/l2.jpg" alt=""></li>
+        <li><img src="images/l3.jpg" alt=""></li>
+        <li><img src="images/l4.jpg" alt=""></li>
+        <li><img src="images/l5.jpg" alt=""></li>
+        <li><img src="images/l6.jpg" alt=""></li>
+        <li><img src="images/l7.jpg" alt=""></li>
+        <li><img src="images/l8.jpg" alt=""></li>
+        <li><img src="images/l1.jpg" alt=""></li>
+        <li><img src="images/l2.jpg" alt=""></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<!--<script>-->
+    <!--var imgBox = document.getElementById("imgBox");-->
+    <!--var num = 0;-->
+    <!--function autoplay() {-->
+        <!--if( num === -1200){-->
+            <!--num = 0;-->
+        <!--}-->
+        <!--num = num - 10;-->
+        <!--imgBox.style.left = num + "px";-->
+        <!--if( num % 300 === 0){-->
+            <!--clearInterval(timer1);-->
+            <!--timer2 = setTimeout(function () {-->
+                <!--timer1 = setInterval ("autoplay ()",10 );-->
+            <!--},3000)-->
+        <!--}-->
+    <!--}-->
+    <!--var timer1 = setInterval ("autoplay()",10 );-->
+    <!--</script>-->
+</body>
+<script>
+    var jd_banner_img = document.getElementById("jd_banner_img");
+    var jdBannerWidth = jd_banner_img.offsetWidth / 10;
+    console.log(jdBannerWidth);
+    var num = 0;
+
+    function autoplay() {
+        if (num === -jdBannerWidth * 8) {
+            num = 0;
+        }
+        num = num - 1;
+        jd_banner_img.style.left = num + "px";
+        if (num % jdBannerWidth === 0) {
+            clearInterval(timer1);
+            timer2 = setTimeout(function () {
+                timer1 = setInterval("autoplay()", 1);
+            }, 4000);
+        }
+    }
+    var timer1 = setInterval("autoplay()", 1);
+</script>
+<script src="index.html"></script>
+</html>
